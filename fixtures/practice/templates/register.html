@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>注册</h1>
+{% if flash %}<p class="flash">{{ flash }}</p>{% endif %}
+{% if done %}
+<dl>
+  <dt>姓名</dt><dd id="name">{{ name }}</dd>
+  <dt>邮箱</dt><dd id="email">{{ email }}</dd>
+  <dt>角色</dt><dd id="role">{{ role }}</dd>
+</dl>
+{% else %}
+<p>练习账号的邮箱固定为 tester@example.com。密码用本机 .env 里的 PRACTICE_PASSWORD，不要发到 Telegram。</p>
+<form method="post" action="/register">
+  <label>姓名 <input id="name" name="name" value="{{ name }}" autocomplete="name"></label>
+  <label>邮箱 <input id="email" name="email" value="{{ email }}" autocomplete="username"></label>
+  <label>密码 <input id="password" name="password" type="password" autocomplete="new-password"></label>
+  <label>角色
+    <select id="role" name="role">
+      <option value="">请选择</option>
+      {% for item in roles %}
+      <option value="{{ item }}" {% if item == role %}selected{% endif %}>{{ item }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label class="choice"><input id="agree" name="agree" type="checkbox" value="yes"> 同意条款</label>
+  <button type="submit">提交</button>
+</form>
+{% endif %}
+{% endblock %}

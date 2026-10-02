@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>提交结果</h1>
+{% if flash %}<p class="flash">{{ flash }}</p>{% endif %}
+{% if submission %}
+<dl>
+  <dt>标题</dt><dd id="title">{{ submission.title }}</dd>
+  <dt>数量</dt><dd id="quantity">{{ submission.quantity }}</dd>
+  <dt>城市</dt><dd id="city">{{ submission.city }}</dd>
+  <dt>加急</dt><dd id="rush">{{ submission.rush }}</dd>
+  <dt>备注</dt><dd id="note">{{ submission.note }}</dd>
+</dl>
+{% endif %}
+{% endblock %}

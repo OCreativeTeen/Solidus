@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; margin: 2rem auto; max-width: 40rem; line-height: 1.5; color: #1b1b1b; }
+    nav a { margin-right: 1rem; }
+    label { display: block; margin: 0.85rem 0; }
+    input, select, textarea { width: 100%; padding: 0.45rem; box-sizing: border-box; }
+    input[type="checkbox"], input[type="radio"] { width: auto; }
+    .choice { margin: 0.35rem 0; }
+    button { margin-top: 1rem; padding: 0.5rem 1rem; }
+    .flash { background: #f3efe6; padding: 0.8rem 1rem; }
+    footer { margin-top: 2rem; color: #555; font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/register">注册</a>
+  <a href="/login">登录</a>
+  <a href="/form">表单</a>
+</nav>
+{% block body %}{% endblock %}
+<footer>这一页只把字段走完。判断留给 Telegram 里的人。</footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# 按一次走通的 Telegram 记录写成。
+# wait human 的地方客户端不代答。1 继续下一行，2 走 redo，3 停下并把聊天交还人。
+# 三处 wait human：提交结果、是否允许接上 Chrome、JSON 能不能用。
+
+send /run practice
+send 1
+send 注册 tester 测试员
+send 1
+send 登录
+send 1
+send 填表 桥 2 多伦多 true 只要名字
+wait human
+redo 填表 桥 2 多伦多 true 只要名字
+wait human
+wait human

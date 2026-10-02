@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>登录</h1>
+{% if flash %}<p class="flash">{{ flash }}</p>{% endif %}
+{% if not logged_in %}
+<form method="post" action="/login">
+  <label>邮箱 <input id="email" name="email" value="tester@example.com" autocomplete="username"></label>
+  <label>密码 <input id="password" name="password" type="password" autocomplete="current-password"></label>
+  <button type="submit">提交</button>
+</form>
+{% endif %}
+{% endblock %}
